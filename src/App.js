@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Css from "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+class App extends Component{
+  state = {
+    identificacao: [{
+      nome: "Charles", 
+      idade: 35, 
+      comidaFavorita: "Lasanha"
+    }],
+    musica: ["Breaking The Habit - Linkin Park"," Chop Suey! - System Of A Down","Come As You Are - Nirvana"]
+  }
+  
+  render(){
+    return(
+      <section className="sec wrap">
+        <div className="h1 verde">
+        <h1>Meu nome é {this.state.identificacao[0].nome}</h1> 
+        </div>
+
+        <div className="h2  rosa">
+        <h2>Minha idade é {this.state.identificacao[0].idade}</h2>
+        </div>
+
+        <div className="h3  azul">
+        <h3>Minha comida favorita é {this.state.identificacao[0].comidaFavorita}</h3>
+        </div>
+        
+        <div className="ol laranja">
+        <ol>
+        <p className="p preto">Segue uma lista com 3 musicas que escuto</p>
+            <li>{this.state.musica[0]}</li>
+            <li>{this.state.musica[1]}</li>
+            <li>{this.state.musica[2]}</li>
+        </ol>
+        </div>
+      </section>
+    )
+  }
+};
 
 export default App;

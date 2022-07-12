@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Css from "./App.css";
+import "./App.css";
 
 class App extends Component{
   state = {
@@ -15,24 +15,24 @@ class App extends Component{
     return(
       <section className="sec wrap">
         <div className="h1 verde">
-        <h1>Meu nome é {this.state.identificacao[0].nome}</h1> 
+          <h1>Meu nome é {this.state.identificacao[0].nome}</h1> 
         </div>
 
         <div className="h2  rosa">
-        <h2>Minha idade é {this.state.identificacao[0].idade}</h2>
+          <h2>Minha idade é {this.state.identificacao[0].idade}</h2>
         </div>
 
         <div className="h3  azul">
-        <h3>Minha comida favorita é {this.state.identificacao[0].comidaFavorita}</h3>
+          <h3>Minha comida favorita é {this.state.identificacao[0].comidaFavorita}</h3>
         </div>
         
         <div className="ol laranja">
-        <ol>
-        <p className="p preto">Segue uma lista com 3 musicas que escuto</p>
-            <li>{this.state.musica[0]}</li>
-            <li>{this.state.musica[1]}</li>
-            <li>{this.state.musica[2]}</li>
-        </ol>
+          <p className="p preto">Segue uma lista com 3 musicas que escuto</p>
+          {this.state.musica.map((item) => (
+            <ol>
+              <li>{item}</li>
+            </ol>
+        ))}
         </div>
       </section>
     )
